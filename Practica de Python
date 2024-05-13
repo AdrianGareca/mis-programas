@@ -1,0 +1,87 @@
+nombre=input("dime tu nombre: ")
+edad=int(input("dime tu edad: "))
+print("hola " + nombre + " tienes " + str(edad) + ", anos de edad")
+
+if edad<18:
+    print ("eres menor de edad")
+    print("Te gusta baby sharrk")
+else:
+    print("Eres mayor de edad")
+    print("vamos por unas chelas")
+print("gracias por usar este programa")
+
+nombre=input("dime tu nombre: ")
+edad=int(input("dime tu edad: "))
+print("hola " + nombre + " tienes " + str(edad) + ", anos de edad")
+
+if edad<18:
+    print ("eres menor de edad")
+    print("Te gusta baby sharrk")
+if edad>17:
+    print("Eres menor de edad")
+    print("Te gusta bob esponja")
+print("gracias por usar este programa")
+
+nombre=input("dime tu nombre: ")
+edad=int(input("dime tu edad: "))
+print("hola " + nombre + " tienes " + str(edad) + ", anos de edad")
+
+if edad<4:
+    print("bebe")
+elif edad<13:
+    print("nino")
+elif edad<18:
+    print("adolescente")
+elif edad<66:
+    print("adulto")
+else:
+    print("anciano")
+    
+print("gracias por usar este programa")
+
+nombre=input("dime tu nombre: ")
+edad=int(input("dime tu edad: "))
+nota=int(input("dime tu nota"))
+print("hola " + nombre + " tienes " + str(edad) + " anos de edad" + "y tu nota es: " + str(nota))
+
+if nota<21:
+    print("tonto")
+elif nota<51:
+    print("reprobado")
+elif nota<81:
+    print("aprobado")
+elif nota<96:
+    print("chichero")
+else:
+    print("chupa del profe")
+    
+print("gracias por usar este programa")
+
+n=1 
+while n<3:
+    print("->"+str(n))
+    n=n+1
+print ("listo"+str(n))
+
+continuar=True
+while continuar:
+    numero=int(input("ingresar un numero"))
+    opc=input("¿Ingresar otro numero? (s/n)")
+    if opc=="n":
+        continuar=False
+print("Graicas por usar wste programa")
+
+continuar=True
+acc=0 #esta variable funcioan como acumulador
+ctd=0 #esta variable funciona como contador
+while continuar:
+    num=int(input("ingresar un numero"))
+    ctd+=1 #que es lo mismo que--> ctd=ctd+1
+    acc+=num # es lo mismo que --> acc=acc +num
+    opc=input("¿Ingresar otro numero? (s/n)")
+    if opc=="n":
+        continuar=False
+print("el valor acumulado es "+str(acc))
+print("se ingresaron "+str(ctd)+ "numeros")
+prom=acc/ctd
+print("PROMEDIO: "+ str(prom))
