@@ -85,3 +85,57 @@ print("el valor acumulado es "+str(acc))
 print("se ingresaron "+str(ctd)+ "numeros")
 prom=acc/ctd
 print("PROMEDIO: "+ str(prom))
+
+
+
+
+
+
+continuar=True
+acc=0 #esta variable funcioan como acumulador
+ctd=0 #esta variable funciona como contador
+acc1=0 #acumula los valores menores de 50
+acc2=0 #acumula los valores mayores a 50
+ctd1=0 #cuenta los valores menores a 50
+ctd2=0 #cuenta los valores mayores a 50
+while continuar:
+    num=int(input("ingresar un numero: "))
+    ctd+=1 #que es lo mismo que--> ctd=ctd+1
+    acc+=num # es lo mismo que --> acc=acc +num}
+
+    if num>51:
+        acc2+=num
+        ctd2+=1
+    else:
+        acc1+=num
+        ctd1+=1
+    
+    opc=input("¿Ingresar otro numero? (s/n) ")
+    if opc=="n":
+        continuar=False
+
+print("el valor acumulado de los numeros menores a 50 es: "+str(acc1))
+print("se ingresaron "+str(ctd1)+ "numeros menores a 50: ")
+prom1=acc1/ctd1
+print("PROMEDIO: "+ str(prom1))
+
+print("el valor acumulado de los numeros mayores a 50 es: "+str(acc2))
+print("se ingresaron "+str(ctd2)+ "numeros mayores a 50: ")
+prom2=acc2/ctd2
+print("PROMEDIO: "+ str(prom2))
+
+print("El porcentaje de numeros menores a 50 es: "+str(ctd1*100/ctd)+"%")
+print("El porcentaje de numeros mayores a 50 es: "+str(100*ctd2/ctd)+"%")
+
+print("el valor acumulado de todos los numeros es: "+str(acc))
+print("se ingresaron "+str(ctd)+ " numeros")
+prom=acc/ctd
+print("PROMEDIO: "+ str(prom))
+
+bin=""
+num=int(input("ingresa un numero: "))
+while num!=1:
+    bin=str(num%2)+bin
+    num=int(num/2)
+print("1"+bin)
+
