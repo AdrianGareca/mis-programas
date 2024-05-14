@@ -139,3 +139,9 @@ while num!=1:
     num=int(num/2)
 print("1"+bin)
 
+n1=int(input("Ingresa el primer numero: "))
+n2=int(input("Ingresa el segundo numero: "))
+num=1
+while not(num%n1==0 and num%n2==0):
+    num+=1
+print("mcm "+ str(num))
