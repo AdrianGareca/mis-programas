@@ -145,3 +145,78 @@ num=1
 while not(num%n1==0 and num%n2==0):
     num+=1
 print("mcm "+ str(num))
+
+
+
+
+
+import random
+#print(int(random.random()*6)+1)
+
+lista=[]
+
+for x in range(10):
+    lista.append(int(random.random()*6)+1)
+
+print("-"*80)
+
+acc=0
+
+for aux in lista:
+   acc+=aux 
+
+print(lista)
+print("promedio: "+str(acc/len(lista)))
+print("listo")
+
+
+
+
+
+
+
+import random
+#print(int(random.random()*6)+1)
+
+lista=[]
+
+for x in range(10):
+    lista.append(int(random.random()*6)+1)
+
+print("-"*80)
+
+acc=0
+
+
+for aux in lista:
+   acc+=aux 
+
+ctd=0
+
+for aux in lista:
+    if aux==6:
+        ctd+=1
+
+print(lista)
+print("promedio: "+str(acc/len(lista)))
+print("el porcentaje de 6 en la lista es "+str(ctd*100/len(lista))+"%")
+print("listo")
+
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+mayor=0
+for aux in lista:
+    if lista[aux]>mayor:
+        mayor=lista[aux]
+
+
+
+print(lista)
+print("El numero mayor de la lista es: "+str(mayor))
+print("listo")
