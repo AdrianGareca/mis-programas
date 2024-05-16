@@ -220,3 +220,37 @@ for aux in lista:
 print(lista)
 print("El numero mayor de la lista es: "+str(mayor))
 print("listo")
+
+
+
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+mayor1=-1
+mayor2=-1
+mayor3=-1
+
+for aux in lista:
+    if aux>mayor1:
+        mayor3=mayor2
+        mayor2=mayor1
+        mayor1=aux
+    elif aux>mayor2:
+        mayor3=mayor2
+        mayor2=aux
+    elif aux>mayor3:
+        mayor3=aux
+        
+
+print(lista)
+print("El numero mayor de la lista es: "+str(mayor1))
+print("El segundo mayor de la lista es: "+str(mayor2))
+print("El tercer mayor de la lista es: "+str(mayor3))
+print("listo")
+
+
