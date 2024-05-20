@@ -222,7 +222,7 @@ print("El numero mayor de la lista es: "+str(mayor))
 print("listo")
 
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 import random
 
@@ -253,4 +253,100 @@ print("El segundo mayor de la lista es: "+str(mayor2))
 print("El tercer mayor de la lista es: "+str(mayor3))
 print("listo")
 
+
+
+
+--------------------------------------------------------------------------------------------
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+for i in range(len(lista)-1):
+    if lista[0]<lista[i]:
+        #usando un swap
+        aux =lista[i]           #paso 1
+        lista[i]=lista[0]       #paso 2
+        lista[0]=aux            #paso 3
+        
+print(lista)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+for i in range(1,len(lista)):
+    if lista[0]<lista[i]:
+        #usando un swap
+        aux =lista[i]           #paso 1
+        lista[i]=lista[0]       #paso 2
+        lista[0]=aux            #paso 3
+        
+print(lista)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+def intercambio(p1,p2):
+        aux =lista[p2]           #paso 1
+        lista[p2]=lista[p1]       #paso 2
+        lista[p1]=aux            #paso 3
+    
+
+for i in range(1,len(lista)):
+    if lista[0]<lista[i]:
+        intercambio(0,i)
+        
+        
+print(lista)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+
+for i in range(1,len(lista)):
+    if lista[0]<lista[i]:
+        lista[0],lista[i]=lista[i],lista[0]
+        
+        
+print(lista)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+#bubble.py
+
+
+import random
+
+lista=[]
+
+for x in range(20):
+    lista.append(int(random.random()*100))
+
+for a in range(0,len(lista)-1):
+    for i in range(a+1,len(lista)):
+        if lista[a]<lista[i]:
+            lista[a],lista[i]=lista[i],lista[a]
+        
+
+print(lista)
 
