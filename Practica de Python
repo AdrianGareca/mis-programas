@@ -350,3 +350,31 @@ for a in range(0,len(lista)-1):
 
 print(lista)
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+def comp(texto):
+    ctd=1
+    actual=texto[0]
+    salida=""
+
+    for aux in texto[1:]:
+        if aux==actual:
+            ctd+=1
+        else:
+            salida+=str(ctd)
+            salida+=actual
+            ctd=1
+            actual=aux
+    salida+=str(ctd)
+    salida+=actual
+    return salida
+
+t=input("Ingrese su texto a comprimir: ")
+print(comp(t))
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+import complib
+
+t=input("Ingrese su texto a comprimir: ")
+print(complib.comp(t))
