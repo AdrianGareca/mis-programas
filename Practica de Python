@@ -378,3 +378,25 @@ import complib
 
 t=input("Ingrese su texto a comprimir: ")
 print(complib.comp(t))
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+data=[]
+while True:
+    print("-"*20)
+    print("1 :Nueva cuenta")
+    print("2 :Ingresar")
+    print("3 :Ver los datos")
+    print("0 :Salir")
+    opc=input("opcion: ")
+    if opc==0:
+        break
+    elif opc=="1":
+        log=input("ingresa tu log: ")
+        pas=input("ingresa tu pasword: ")
+        data.append({"l":log,"p":pas})
+    elif opc=="3":
+        print(data)
+    else:
+        print("->opcion desonocidaz<-")
+print("Gracias por usar el promagrama")
