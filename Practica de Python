@@ -400,3 +400,81 @@ while True:
     else:
         print("->opcion desonocidaz<-")
 print("Gracias por usar el promagrama")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+data = []
+while True:
+    print("--+=#Menu Principal #=--")
+    print("-"*20)
+    print("1 :Nueva cuenta")
+    print("2 :Ingresar")
+    print("3 :Ver los datos")
+    print("0 :Salir")
+    opc = input("opcion:")
+    if opc == "0":
+        break
+    elif opc == "l":
+        log = input("ingresa tu log: ")
+        pas = input("ingresa tu password: ")
+        data.append({"l":log,"p":pas})
+    elif opc=="2":
+        l=input("login: ")
+        p=input("password: ")
+        for aux in data:
+            if aux["l"]==l and aux["p"]==p:
+                while True:
+                    print("-"*20)
+                    print("Bievenido "+aux["p"])
+                    print("1 :Enviar memsaje")
+                    print("2 :Leer mensajes")
+                    print("0 :Cerrar sesion")
+                    opc=input("opcion: ")
+                    if opc== "0":
+                        break
+                print("Sesion cerrada")
+                break
+    elif opc == "3":
+        print(data)
+    else:
+        print("-> opcion desconocida <-")
+print("grcias por usar este programa")
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+data = [{'l': 'den', 'p': 'den123',"m":[]}, {'l': 'dani', 'p': 'dani123',"m":[]}, {'l': 'juan', 'p': 'juan123',"m":[]}]
+while True:
+    print("-"*20)
+    print("--+=# Menu principal #=+--")
+    print("1 :Nueva cuenta")
+    print("2 :Ingresar")
+    print("3 :Ver los datos")
+    print("0 :Salir")
+    opc = input("opcion:")
+    if opc == "0":
+        break
+    elif opc == "1":
+        log = input("ingresa tu log: ")
+        pas = input("ingresa tu passwor: ")
+        data.append({"l":log,"p":pas,"m":[]})
+    elif opc == "2":
+        l = input("Login: ")
+        p = input("Psassword: ")
+        for aux in data:
+            if aux["l"] == l and aux["p"] == p:
+                while True:
+                    print("-"*20)
+                    print("Bienvenido " + aux['p'])
+                    print("1: Enviar mensaje")
+                    print("2: Leer mensajes")
+                    print("0: Cerrar Sesion")
+                    opc = input("opcion: ")
+                    if opc == "0":
+                        break
+                print("Sesion Cerrada")
+                break                    
+    elif opc == "3":
+        print(data)
+    else:
+        print("-> opcion desconocida <-")
+print("grcias por usar este programa")
