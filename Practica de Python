@@ -478,3 +478,150 @@ while True:
     else:
         print("-> opcion desconocida <-")
 print("grcias por usar este programa")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+data = [{'l': 'den', 'p': 'den123','m':[]}, {'l': 'dani', 'p': 'dani123','m':[{"rem":"juan","con":"vamos a beber"},{"rem":"den","con":"dice juan que bebamos"}]}, {'l': 'juan', 'p': 'juan123','m':[]}]
+bandera=False
+while True:
+    print("-"*20)
+    print("--+=# Menu principal #=+--")
+    print("1 :Nueva cuenta")
+    print("2 :Ingresar")
+    print("3 :Ver los datos")
+    print("0 :Salir")
+    opc = input("opcion:")
+    if opc == "0":
+        break
+    elif opc == "1":
+        log = input("ingresa tu log: ")
+        pas = input("ingresa tu passwor: ")
+        data.append({"l":log,"p":pas,"m":[]})
+    elif opc == "2":
+        l = input("Login: ")
+        p = input("Psassword: ")
+        for aux in data:
+            if aux["l"] == l and aux["p"] == p:
+                while True:
+                    print("-"*20)
+                    print("Bienvenido " + aux['p'])
+                    print("1: Enviar mensaje")
+                    print("2: Leer mensajes")
+                    print("3: Borrar mensajes")
+                    print("0: Cerrar Sesion")
+                    opc = input("opcion: ")
+                    if opc == "0":
+                        break
+                    elif opc == "1":
+                        q = input("a quien?: ")
+                        m = input("Escribe el mensaje: ")
+                        for dest in data:
+                            if dest["l"] == q:
+                                bandera=True
+                                dest["m"].append({"rem": aux["l"],"con":m})
+                                break
+                        if bandera:
+                            print("-> MENSAJE ENVIADO <-")
+                        else:
+                            printe("->Usuario no existe<-")
+                    elif opc == "2":
+                        for msj in aux['m']:
+                            print("-"*20)
+                            print("envia: " + msj["rem"])
+                            print(msj["con"])
+                    elif opc=="3":
+                        del(aux["m"][:])
+                        print("-> lista borrada <-")
+                    else:
+                        print("Opcion no valida")
+                print("Sesion Cerrada")
+                break                    
+    elif opc == "3":
+        print(data)
+    else:
+        print("-> opcion desconocida <-")
+print("grcias por usar este programa")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import random
+
+def es_full(v):
+    v=ordenar(v)
+    res=[]
+    actual=v[0]
+    ctd=1
+    for aux in v[1:]:
+        if actual==aux:
+            ctd+=1
+        else:
+            actual=aux
+            res.append(ctd)
+            ctd=1
+    res.append(ctd)
+    if len(res)==2 and 3 in res:
+        return True
+    else:
+        return False
+
+def es_poker(v):
+    v=ordenar(v)
+    res=[]
+    actual=v[0]
+    ctd=1
+    for aux in v[1:]:
+        if actual==aux:
+            ctd+=1
+        else:
+            actual=aux
+            res.append(ctd)
+            ctd=1
+    res.append(ctd)
+    if len(res)==1 and 4 in res:
+        return True
+    else:
+        return False
+
+def es_grande(v):
+    v=ordenar(v)
+    res=[]
+    actual=v[0]
+    ctd=1
+    for aux in v[1:]:
+        if actual==aux:
+            ctd+=1
+        else:
+            actual=aux
+            res.append(ctd)
+            ctd=1
+    res.append(ctd)
+    if len(res)==1 and 4 in res:
+        return True
+    else:
+        return False
+
+def ordenar(v):
+    for x in range(len(v)-1):
+        for y in range(x,len(v)):
+            if v[x]>v[y]:
+                v[x],v[y]=v[y],v[x]
+    return v
+
+def lanzar():
+    res=[]
+    for x in range(5):
+        res.append(int(random.random()*6)+1)
+    return res
+
+ctd=0
+for x in range(1000):
+    l=lanzar()
+    if es_full(l):
+        print("full->"+str(l))
+        ctd+=1
+    elif es_poker(l):
+        print("poker->"+str(l))
+        ctd +=1
+print("salieron "+str(ctd)+ " fulls")
+print("salieron "+str(ctd)+ " pokers")
+
