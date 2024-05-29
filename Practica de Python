@@ -625,3 +625,72 @@ for x in range(1000):
 print("salieron "+str(ctd)+ " fulls")
 print("salieron "+str(ctd)+ " pokers")
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import time
+
+print("Te dire si un numero es primo o no.")
+num=int(input("ingresa un numero: "))
+inicio=time.time()
+div=num-1
+bandera=False
+while div>1:
+    if num%div==0:
+        bandera=True
+        print(div)
+    div-=1
+if bandera:
+    print("NO es primo")
+else:
+    print("SI es primo")
+final=time.time()-inicio
+print("Se tardo "+str(int(final*1000)))
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+import time
+
+print("Te dire si un numero es primo o no.")
+num=int(input("ingresa un numero: "))
+inicio=time.time()
+div=round(num/2)
+bandera=False
+while div>1:
+    if num%div==0:
+        bandera=True
+        break
+    div-=1
+if bandera:
+    print("NO es primo")
+else:
+    print("SI es primo")
+final=time.time()-inicio
+print("Se tardo "+str(int(final*1000)))
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+import time
+
+print("Te dire si un numero es primo o no.")
+num=int(input("ingresa un numero: "))
+if num<num3:
+    ("Solo positivos mayores a 2")
+else:
+    inicio=time.time()
+    div=2
+    limite=round(num/2)
+    bandera=False
+    while div<=limite:
+        if num%div==0:
+            bandera=True
+                break
+        div+=1
+    if bandera:
+        print("NO es primo")
+    else:
+        print("SI es primo")
+    final=time.time()-inicio
+    print("Se tardo "+str(int(final*1000)))
+
+---------------------------------------------------------------------------------------------------------------------------------
+
