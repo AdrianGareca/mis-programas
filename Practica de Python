@@ -730,3 +730,38 @@ while bandera==False:
         min=min
         max=mitad
 print("Muy bien, Ese era mi numero")
+
+
+‐------------
+
+import random
+
+num = int(random.random() * 100)
+max_num = 100
+min_num = 0
+mitad = (max_num + min_num) // 2
+bandera = False
+
+print("Piensa en un número del 1 al 100.")
+
+while not bandera:
+    print("¿El número que piensas es mayor (>), menor (<) o igual (=) a", mitad, "?")
+    respuesta = input("Respuesta: ")
+
+    if respuesta == '>':
+        min_num = mitad + 1
+    elif respuesta == '<':
+        max_num = mitad - 1
+    elif respuesta == '=':
+        bandera = True
+    else:
+        print("Respuesta inválida. Por favor, responde con '>', '<' o '='.")
+
+    if min_num > max_num:
+        print("¡No debería ser posible!")
+        break
+
+    mitad = (max_num + min_num) // 2
+
+print("¡Excelente! Tu número era:", mitad)
+
