@@ -692,5 +692,22 @@ else:
     final=time.time()-inicio
     print("Se tardo "+str(int(final*1000)))
 
+-------------------------------------------------------------------------------------------------------------------------
+
+import random
+
+num=int(random.random()*1000)
+
+adv=int(input("adivina: "))
+
+while num!=adv:
+    print("Ese no es")
+    if adv>num:
+        print("mi numero es menor")
+    else:
+        print("mi numero es mayor")
+    adv=int(input("adivina: "))
+print("Lo lograste, ese era.")
+
 ---------------------------------------------------------------------------------------------------------------------------------
 
