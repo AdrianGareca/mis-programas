@@ -710,4 +710,23 @@ while num!=adv:
 print("Lo lograste, ese era.")
 
 ---------------------------------------------------------------------------------------------------------------------------------
+import random
 
+num=int(random.random()*100)
+max=1000
+min=0
+mitad=(max+min)/2
+bandera=False
+
+print("adivina mi numero ")
+
+while bandera==False:
+    print("El numero que piensas es: "+str(mitad)+" ?")
+    
+    if num>mitad:
+        mitad=min
+        max=max
+    elif num<mitad:
+        min=min
+        max=mitad
+print("Muy bien, Ese era mi numero")
