@@ -765,3 +765,32 @@ while not bandera:
 
 print("¡Excelente! Tu número era:", mitad)
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import random
+
+num=int(random.random()*1000)
+max=1000
+min=0
+mitad=(max+min)/2
+bandera=False
+
+print("adivina mi numero ")
+
+while bandera==False:
+    print("El numero que piensas es mayor(>), menor(<) o igual(=) a: "+str(mitad)+" ?")
+    respuesta=input("Respuesta: ")
+    
+    if respuesta =='>':
+        min=mitad
+    elif respuesta=='<':
+        max=mitad
+    elif respuesta=='=':
+        bandera=True
+    else:
+        print("eso no deberia ser posible")
+        break
+
+    mitad=(max+min)/2
+print("Muy bien, Ese era mi numero")
+
