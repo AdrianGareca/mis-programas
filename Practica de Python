@@ -794,3 +794,92 @@ while bandera==False:
     mitad=(max+min)/2
 print("Muy bien, Ese era mi numero")
 
+------------------------------------------------------------------------------------------
+
+import random
+letras="bcdfghjklmnpqrstvwxyz"
+vocales="aeiou"
+
+def let():
+    return letras[int(random.random()*len(letras))]
+def voc():
+    return vocales[int(random.random()*len(vocales))]
+
+def palabra():
+    res=""
+    coin=random.random()*10
+    largo=int(random.random()*2+2)
+    
+    while largo>0:
+        if coin>5:
+            res+=let()+voc()
+        else:
+            res+=voc()+let()
+        largo-=1
+    return res
+def nombre():
+   return(palabra()+"-"+palabra())
+#-------------------------------------------------------------------
+vec=[]
+num=0
+for x in range(100000):
+    inc=int(random.random()*4+1)
+    num=num+inc
+    vec.append([num,nombre()])
+#---------------------------
+arch=open("data.txt","w")
+for aux in vec:
+    arch.write(str(aux[0])+"#"+aux[1]+"\n")
+arch.close()
+
+------------------------------------------------------------------------------------------------+++++++++++++++++++++++++++++++++++++++
+
+import time
+
+vec=[]
+arch=open("data.txt","r")
+
+for linea in arch:
+    partida=linea[:-1].split("#")
+    vec.append([int(partida[0]),partida[1]])
+arch.close()
+
+print(vec[:5])
+print("-"*20)
+print(vec[-5:])
+
+
+while True:
+    print("elija una opcion")
+    print("0->salir")
+    print("1->buscar por nombre")
+    print("2->buscar por id")
+    opc=input("opcion: ")
+    if opc=="0":
+        break
+    elif opc=="1":
+        cri=input("introduzaca un texto: ")
+        found=[]
+        inicio=time.time()
+        for aux in vec:
+            if cri in aux[1]:
+                found.append(aux)
+        print(found)
+        final=time.time()-inicio
+        print("Se tardo "+str(int(final*1000)))
+    elif opc=="2":
+        bandera=False
+        cri=int(input("introduzaca un numero: "))
+        inicio=time.time()
+        for aux in vec:
+            if aux[0]==cri:
+                print(aux)
+                bandera = True
+                break
+            final=time.time()-inicio
+            print("Se tardo "+str(int(final*1000)))
+        if not bandera:
+            print("no hay ese id")
+    else:
+        print("->opcion no valida<-")
+print("gracias por usar esta app")
