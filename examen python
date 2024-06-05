@@ -1,0 +1,68 @@
+vec = []
+arch = open("data.txt","r")
+
+for linea in arch:
+    partida = linea[:-1].split("#")
+    vec.append([int(partida[0]),partida[1]])
+arch.close()
+
+print(vec[:5])
+print("-"*20)
+print(vec[-5:])
+
+
+while True:
+    print("eliga una opcion")
+    print("0-> salir")
+    print("1-> buscar por nombre")
+    print("2-> buscar por id")
+    print("3->busqueda binaria")
+    opc = input("opcion: ")
+    if opc == "0":
+        break
+    elif opc == "1":
+        cri = input("introduzca un texto: ")
+        found = []
+        for aux in vec:
+            if cri in aux[1]:
+                found.append(aux)
+        print(found)
+    elif opc == "2":
+        bandera = False
+        cri = int(input("introduzca un numero: "))
+        for aux in vec:
+            if aux[0] == cri:
+                print(aux)
+                bandera = True
+                break
+        if not bandera:
+            print("no hay ese id")
+    elif opc=="3":
+        cri=int(input("introduzaca un numero: "))
+
+        min,max=0,len(vec)-1
+        encontrado=None
+        while min<=max:
+            medio=(max+min)//2
+            valor_medio=vec[medio][0]
+            
+            if cri==valor_medio:
+                encontrado=vec[medio]
+                break
+            elif cri>valor_medio:
+                min=medio
+            else:
+                max=medio
+                break
+            
+            if min>max:
+                encontrado;None
+                break
+            medio=(max+min)//2
+        if encontrado:
+            print("se encontro el id: "+str(encontrado))
+        else:
+            print("No existe ese ID")
+    else:
+        print("-> opcion no valida <-")
+print("gracias por usar esta app")
