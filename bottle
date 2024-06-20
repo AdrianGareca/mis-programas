@@ -16,3 +16,29 @@ def recibir():
             <a href="/">volver</a> '''
 
 run(host='0.0.0.0', port=8080, debug=True)
+
+-------------------------------------------------
+
+from bottle import route, run, request
+
+data={"max":1000,"min":0,"Bamdera":False}
+data["mid"]=(data["max"]+data["min"])/2
+
+@route('/',method='get')
+def inicio():
+    return '''
+        <h1>Adivina mi Numuero</h1>
+        <h2>El numero es menor a: </h2>
+        <form action="/" method="post">
+            numero: <input name="num" type="number" />
+            <input value="enviar" type="submit" />
+        </form>
+    '''
+
+@route('/',method='post')
+def recibir():
+    numero=request.forms.get('num')
+    return str(int(numero)+1)+''', te gane <br>
+            <a href="/">volver</a> '''
+
+run(host='0.0.0.0', port=8080, debug=True)
