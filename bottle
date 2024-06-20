@@ -1,0 +1,18 @@
+from bottle import route, run, request
+
+@route('/',method='get')
+def inicio():
+    return '''
+        <form action="/" method="post">
+            numero: <input name="num" type="number" />
+            <input value="enviar" type="submit" />
+        </form>
+    '''
+
+@route('/',method='post')
+def recibir():
+    numero=request.forms.get('num')
+    return str(int(numero)+1)+''', te gane <br>
+            <a href="/">volver</a> '''
+
+run(host='0.0.0.0', port=8080, debug=True)
